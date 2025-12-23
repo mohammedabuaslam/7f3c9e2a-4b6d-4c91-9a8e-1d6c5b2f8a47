@@ -1,0 +1,4 @@
+Sitemap: https://www.dentalinfinitylabs.com/sitemap.xml
+
+User-Agent: *
+Allow: /
