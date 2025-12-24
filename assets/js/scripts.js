@@ -670,10 +670,6 @@ $(window).on("load", function () {
     $('#contact-form').validator();
 
     $('#contact-form').on('submit', function (e) {
-        // Allow default submission to trigger FormSubmit.co activation page
-        return true;
-
-        /* AJAX disabled for activation
         if (!e.isDefaultPrevented()) {
             var url = $(this).attr('action');
 
@@ -702,7 +698,6 @@ $(window).on("load", function () {
             });
             return false;
         }
-        */
     });
 
 });
