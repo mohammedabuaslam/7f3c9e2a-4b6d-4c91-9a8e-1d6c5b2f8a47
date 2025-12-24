@@ -672,6 +672,12 @@ $(window).on("load", function () {
     $('#contact-form').on('submit', function (e) {
         if (!e.isDefaultPrevented()) {
             var url = $(this).attr('action');
+            var btn = $(this).find('button[type="submit"]');
+            var btnText = btn.find('.text');
+            var originalText = btnText.text();
+
+            btn.prop('disabled', true);
+            btnText.html('<i class="fas fa-spinner fa-spin"></i> Sending...');
 
             $.ajax({
                 type: "POST",
@@ -679,6 +685,9 @@ $(window).on("load", function () {
                 data: $(this).serialize(),
                 dataType: "json",
                 success: function (data) {
+                    btn.prop('disabled', false);
+                    btnText.text(originalText);
+
                     var messageAlert = 'alert-success';
                     var messageText = 'Thank you for reaching out to us. We will get back to you shortly';
 
@@ -689,6 +698,9 @@ $(window).on("load", function () {
                     }
                 },
                 error: function (data) {
+                    btn.prop('disabled', false);
+                    btnText.text(originalText);
+
                     var messageAlert = 'alert-danger';
                     var messageText = 'There was an error while submitting the form. Please try again later.';
 
