@@ -1,4 +1,4 @@
-$(function() {
+$(function () {
 
     "use strict";
 
@@ -25,19 +25,19 @@ $(function() {
     --------------------------------  Navbar Menu   --------------------------------
     ============================================================================= */
 
-    $('.navbar .dropdown').hover(function() {
+    $('.navbar .dropdown').hover(function () {
         $(this).find('.dropdown-menu').addClass('show');
-    }, function() {
+    }, function () {
         $(this).find('.dropdown-menu').removeClass('show')
     });
 
-    $('.navbar .dropdown-item').hover(function() {
+    $('.navbar .dropdown-item').hover(function () {
         $(this).find('.dropdown-side').addClass('show');
-    }, function() {
+    }, function () {
         $(this).find('.dropdown-side').removeClass('show')
     });
 
-    $(".navbar .search-form").on("click", ".search-icon", function() {
+    $(".navbar .search-form").on("click", ".search-icon", function () {
 
         $(".navbar .search-form").toggleClass("open");
 
@@ -51,12 +51,12 @@ $(function() {
         }
     });
 
-    $(".navbar").on("click", ".navbar-toggler", function() {
+    $(".navbar").on("click", ".navbar-toggler", function () {
 
         $(".navbar .navbar-collapse").toggleClass("show");
     });
 
-    wind.on("scroll", function() {
+    wind.on("scroll", function () {
 
         var bodyScroll = wind.scrollTop(),
             navbar = $(".navbar"),
@@ -78,7 +78,7 @@ $(function() {
         window.scrollTo(0, 0);
     }
 
-    wind.on("scroll", function() {
+    wind.on("scroll", function () {
 
         var bodyScroll = wind.scrollTop(),
             navbar = $(".topnav");
@@ -97,7 +97,7 @@ $(function() {
         navDark = $(".topnav.dark"),
         logoChan = $(".topnav.dark .logo img");
 
-    $('.topnav .menu-icon').on('click', function() {
+    $('.topnav .menu-icon').on('click', function () {
         open = !open;
 
         $('.hamenu').toggleClass("open");
@@ -130,16 +130,16 @@ $(function() {
         }
     });
 
-    $('.hamenu .menu-links .main-menu > li').on('mouseenter', function() {
+    $('.hamenu .menu-links .main-menu > li').on('mouseenter', function () {
         $(this).removeClass('hoverd').siblings().addClass('hoverd');
     });
 
-    $('.hamenu .menu-links .main-menu > li').on('mouseleave', function() {
+    $('.hamenu .menu-links .main-menu > li').on('mouseleave', function () {
         $(this).removeClass('hoverd').siblings().removeClass('hoverd');
     });
 
 
-    $('.main-menu > li .dmenu').on('click', function() {
+    $('.main-menu > li .dmenu').on('click', function () {
         $(this).parent().parent().find(".sub-menu").toggleClass("sub-open").slideToggle();
         $(this).toggleClass("dopen");
     });
@@ -159,7 +159,7 @@ $(function() {
         loop: true,
 
         on: {
-            init: function() {
+            init: function () {
                 var swiper = this;
                 for (var i = 0; i < swiper.slides.length; i++) {
                     $(swiper.slides[i])
@@ -169,7 +169,7 @@ $(function() {
                         });
                 }
             },
-            resize: function() {
+            resize: function () {
                 this.update();
             }
         },
@@ -198,7 +198,7 @@ $(function() {
         loop: true,
 
         on: {
-            init: function() {
+            init: function () {
                 var swiper = this;
                 for (var i = 0; i < swiper.slides.length; i++) {
                     $(swiper.slides[i])
@@ -208,7 +208,7 @@ $(function() {
                         });
                 }
             },
-            resize: function() {
+            resize: function () {
                 this.update();
             }
         },
@@ -246,10 +246,10 @@ $(function() {
         }
     });
 
-    galleryImg.on("slideChangeTransitionStart", function() {
+    galleryImg.on("slideChangeTransitionStart", function () {
         galleryThumb.slideTo(galleryImg.activeIndex);
     });
-    galleryThumb.on("transitionStart", function() {
+    galleryThumb.on("transitionStart", function () {
         galleryImg.slideTo(galleryThumb.activeIndex);
     });
 
@@ -258,7 +258,7 @@ $(function() {
     ------------------------------  Interactive work   -----------------------------
     ============================================================================= */
 
-    $('.inter-links-center .links-text li').on('mouseenter', function() {
+    $('.inter-links-center .links-text li').on('mouseenter', function () {
         var tab_id = $(this).attr('data-tab');
         $('.links-text li').removeClass('current');
         $(this).addClass('current');
@@ -271,17 +271,17 @@ $(function() {
         }
     });
 
-    $('.inter-links-center .links-text li').on('mouseleave', function() {
+    $('.inter-links-center .links-text li').on('mouseleave', function () {
         $('.links-text li').removeClass('current');
         $('.links-img .img').removeClass('current');
     });
 
 
-    $('.inter-links-center .links-text li').on('mouseenter', function() {
+    $('.inter-links-center .links-text li').on('mouseenter', function () {
         $(this).removeClass('no-active').siblings().addClass('no-active');
     });
 
-    $('.inter-links-center .links-text li').on('mouseleave', function() {
+    $('.inter-links-center .links-text li').on('mouseleave', function () {
         $('.inter-links-center .links-text li').removeClass('no-active');
     });
 
@@ -290,7 +290,7 @@ $(function() {
     -------------------------------  works Hover  ----------------------------------
     ============================================================================= */
 
-    $(".portfolio.changed-bg .item").on("mouseenter", ".img", function() {
+    $(".portfolio.changed-bg .item").on("mouseenter", ".img", function () {
 
         var Bgcolor = $(this).attr("data-bgcolor");
 
@@ -301,7 +301,7 @@ $(function() {
         }
     });
 
-    $(".portfolio.changed-bg .item").on("mouseleave", ".img", function() {
+    $(".portfolio.changed-bg .item").on("mouseleave", ".img", function () {
 
         $(".portfolio.changed-bg").css("background-color", "transparent");
         $(".portfolio.changed-bg").removeClass("chang-text");
@@ -313,7 +313,7 @@ $(function() {
     ============================================================================= */
 
     var pageSection = $(".bg-img, section");
-    pageSection.each(function(indx) {
+    pageSection.each(function (indx) {
 
         if ($(this).attr("data-background")) {
             $(this).css("background-image", "url(" + $(this).data("background") + ")");
@@ -321,7 +321,7 @@ $(function() {
     });
 
     var pageSectionColor = $(".bg-solid-color, section");
-    pageSectionColor.each(function(indx) {
+    pageSectionColor.each(function (indx) {
 
         var color = $(this).attr("data-solid-color");
 
@@ -335,7 +335,7 @@ $(function() {
     -----------------------------------  Tabs  -------------------------------------
     ============================================================================= */
 
-    $('#tabs .tab-links').on('click', '.item-link', function() {
+    $('#tabs .tab-links').on('click', '.item-link', function () {
 
         var tab_id = $(this).attr('data-tab');
 
@@ -347,7 +347,7 @@ $(function() {
 
     });
 
-    $('#tabs-fade .tab-links').on('click', '.item-link', function() {
+    $('#tabs-fade .tab-links').on('click', '.item-link', function () {
 
         var tab2_id = $(this).attr('data-tab');
 
@@ -364,7 +364,7 @@ $(function() {
     --------------------------------  Accordion  -----------------------------------
     ============================================================================= */
 
-    $(".accordion").on("click", ".title", function() {
+    $(".accordion").on("click", ".title", function () {
 
         $(this).next().slideDown();
 
@@ -372,7 +372,7 @@ $(function() {
 
     });
 
-    $(".accordion").on("click", ".item", function() {
+    $(".accordion").on("click", ".item", function () {
 
         $(this).addClass("active").siblings().removeClass("active");
 
@@ -383,19 +383,19 @@ $(function() {
     ---------------------------------  Tolltip  ------------------------------------
     ============================================================================= */
 
-    $('[data-tooltip-tit]').hover(function() {
+    $('[data-tooltip-tit]').hover(function () {
         $('<div class="div-tooltip-tit"></div>').text($(this).attr('data-tooltip-tit')).appendTo('body').fadeIn('slow');
-    }, function() {
+    }, function () {
         $('.div-tooltip-tit').remove();
-    }).mousemove(function(e) {
+    }).mousemove(function (e) {
         $('.div-tooltip-tit').css({ top: e.pageY + 10, left: e.pageX + 20 })
     });
 
-    $('[data-tooltip-sub]').hover(function() {
+    $('[data-tooltip-sub]').hover(function () {
         $('<div class="div-tooltip-sub"></div>').text($(this).attr('data-tooltip-sub')).appendTo('body').fadeIn('slow');
-    }, function() {
+    }, function () {
         $('.div-tooltip-sub').remove();
-    }).mousemove(function(e) {
+    }).mousemove(function (e) {
         $('.div-tooltip-sub').css({ top: e.pageY + (-15), left: e.pageX + 30 })
     });
 
@@ -407,7 +407,7 @@ $(function() {
     var c4 = $('.skills-circle .skill');
     var myVal = $(this).attr('data-value');
 
-    $(".skills-circle .skill").each(function() {
+    $(".skills-circle .skill").each(function () {
 
         c4.circleProgress({
             startAngle: -Math.PI / 2 * 1,
@@ -419,8 +419,8 @@ $(function() {
 
     });
 
-    wind.on('scroll', function() {
-        $(".skill-progress .progres").each(function() {
+    wind.on('scroll', function () {
+        $(".skill-progress .progres").each(function () {
             var bottom_of_object =
                 $(this).offset().top + $(this).outerHeight();
             var bottom_of_window =
@@ -445,7 +445,7 @@ $(function() {
     // Get the mouse position
     let mouseX = 0;
     let mouseY = 0;
-    document.addEventListener('mousemove', function(event) {
+    document.addEventListener('mousemove', function (event) {
         mouseX = event.clientX;
         mouseY = event.clientY;
     });
@@ -547,13 +547,13 @@ $(function() {
 -----------------------------  Parallax Animation  -----------------------------
 ============================================================================= */
 
-(function() {
+(function () {
     const link = document.querySelectorAll('.hover-this');
     const cursor = document.querySelector('.cursor');
-    const animateit = function(e) {
+    const animateit = function (e) {
         const hoverAnim = this.querySelector('.hover-anim');
         const { offsetX: x, offsetY: y } = e, { offsetWidth: width, offsetHeight: height } = this,
-        move = 25,
+            move = 25,
             xMove = x / width * (move * 2) - move,
             yMove = y / height * (move * 2) - move;
         hoverAnim.style.transform = `translate(${xMove}px, ${yMove}px)`;
@@ -569,10 +569,10 @@ $(function() {
     window.addEventListener('mousemove', editCursor);
 
     $("a, .cursor-pointer").hover(
-        function() {
+        function () {
             $(".cursor").addClass("cursor-active");
         },
-        function() {
+        function () {
             $(".cursor").removeClass("cursor-active");
         }
     );
@@ -611,7 +611,7 @@ $(function() {
 ////////////////////////////////////////////////////////////////////////////////
 ============================================================================= */
 
-$(window).on("load", function() {
+$(window).on("load", function () {
 
 
     /* =============================================================================
@@ -620,7 +620,7 @@ $(window).on("load", function() {
 
     var body = $('body');
     body.addClass('loaded');
-    setTimeout(function() {
+    setTimeout(function () {
         body.removeClass('loaded');
     }, 1500);
 
@@ -653,12 +653,12 @@ $(window).on("load", function() {
 
     var $gallery = $('.gallery').isotope();
 
-    $('.filtering').on('click', 'span', function() {
+    $('.filtering').on('click', 'span', function () {
         var filterValue = $(this).attr('data-filter');
         $gallery.isotope({ filter: filterValue });
     });
 
-    $('.filtering').on('click', 'span', function() {
+    $('.filtering').on('click', 'span', function () {
         $(this).addClass('active').siblings().removeClass('active');
     });
 
@@ -669,27 +669,40 @@ $(window).on("load", function() {
 
     $('#contact-form').validator();
 
-    $('#contact-form').on('submit', function(e) {
+    $('#contact-form').on('submit', function (e) {
+        // Allow default submission to trigger FormSubmit.co activation page
+        return true;
+
+        /* AJAX disabled for activation
         if (!e.isDefaultPrevented()) {
-            var url = "contact.php";
+            var url = $(this).attr('action');
 
             $.ajax({
                 type: "POST",
                 url: url,
                 data: $(this).serialize(),
-                success: function(data) {
-                    var messageAlert = 'alert-' + data.type;
-                    var messageText = data.message;
+                dataType: "json",
+                success: function (data) {
+                    var messageAlert = 'alert-success';
+                    var messageText = 'Thank you for reaching out to us. We will get back to you shortly';
 
                     var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
                     if (messageAlert && messageText) {
                         $('#contact-form').find('.messages').html(alertBox);
                         $('#contact-form')[0].reset();
                     }
+                },
+                error: function (data) {
+                    var messageAlert = 'alert-danger';
+                    var messageText = 'There was an error while submitting the form. Please try again later.';
+
+                    var alertBox = '<div class="alert ' + messageAlert + ' alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>' + messageText + '</div>';
+                    $('#contact-form').find('.messages').html(alertBox);
                 }
             });
             return false;
         }
+        */
     });
 
 });
@@ -699,7 +712,7 @@ $(window).on("load", function() {
 -----------------------------  Button scroll up   ------------------------------
 ============================================================================= */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
     "use strict";
 
@@ -710,7 +723,7 @@ $(document).ready(function() {
     progressPath.style.strokeDashoffset = pathLength;
     progressPath.getBoundingClientRect();
     progressPath.style.transition = progressPath.style.WebkitTransition = 'stroke-dashoffset 10ms linear';
-    var updateProgress = function() {
+    var updateProgress = function () {
         var scroll = $(window).scrollTop();
         var height = $(document).height() - $(window).height();
         var progress = pathLength - (scroll * pathLength / height);
@@ -720,14 +733,14 @@ $(document).ready(function() {
     $(window).scroll(updateProgress);
     var offset = 150;
     var duration = 550;
-    jQuery(window).on('scroll', function() {
+    jQuery(window).on('scroll', function () {
         if (jQuery(this).scrollTop() > offset) {
             jQuery('.progress-wrap').addClass('active-progress');
         } else {
             jQuery('.progress-wrap').removeClass('active-progress');
         }
     });
-    jQuery('.progress-wrap').on('click', function(event) {
+    jQuery('.progress-wrap').on('click', function (event) {
         event.preventDefault();
         jQuery('html, body').animate({ scrollTop: 0 }, duration);
         return false;
@@ -740,7 +753,7 @@ $(document).ready(function() {
 --------------------------------  Fade Header   --------------------------------
 ============================================================================= */
 
-$(window).scroll(function() {
+$(window).scroll(function () {
 
     var scrolled = $(this).scrollTop();
     $('.fixed-slider .caption , .fixed-slider .capt .parlx').css({
@@ -767,7 +780,7 @@ wow.init();
 ////////////////////////////////////////////////////////////////////////////////
 ============================================================================= */
 
-$(function() {
+$(function () {
 
 
     "use strict";
@@ -787,7 +800,7 @@ $(function() {
     ----------------------------  Swiper Data Controls   ---------------------------
     ============================================================================= */
 
-    $('[data-carousel="swiper"]').each(function() {
+    $('[data-carousel="swiper"]').each(function () {
 
         var containe = $(this).find('[data-swiper="container"]').attr('id');
         var pagination = $(this).find('[data-swiper="pagination"]').attr('id');
@@ -1178,16 +1191,16 @@ $(function() {
     });
     tl.from(
         "header", {
-            y: 200,
-        },
+        y: 200,
+    },
         "-=1.5"
     );
     tl.from(
         "header .container", {
-            y: 40,
-            opacity: 0,
-            delay: 0.3,
-        },
+        y: 40,
+        opacity: 0,
+        delay: 0.3,
+    },
         "-=1.5"
     );
 
@@ -1195,7 +1208,7 @@ $(function() {
 
 
 
-$(function() {
+$(function () {
     var width = $(window).width();
     if (width > 991) {
 
@@ -1243,8 +1256,8 @@ $(function() {
         -----------------------------  Portfolio Fixed  --------------------------------
         ============================================================================= */
 
-        wind.on('scroll', function() {
-            $(".portfolio-fixed .sub-bg .cont").each(function() {
+        wind.on('scroll', function () {
+            $(".portfolio-fixed .sub-bg .cont").each(function () {
                 var bottom_of_object =
                     $(this).offset().top + $(this).outerHeight();
                 var bottom_of_window =
@@ -1263,13 +1276,13 @@ $(function() {
 });
 
 
-$(function() {
+$(function () {
     var width = $(window).width();
     if (width < 991) {
 
         "use strict";
 
-        $(".navbar .navbar-nav").on("click", ".nav-link", function() {
+        $(".navbar .navbar-nav").on("click", ".nav-link", function () {
 
             $(".navbar .navbar-nav .dropdown .dropdown-menu").removeClass("show");
 
